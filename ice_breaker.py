@@ -29,9 +29,9 @@ if __name__ == "__main__":
     print(linkedin_profile_url)
     # linkedin_data = scrape_demo_linkedin_profile(
     #     linkedin_profile_url
-    # )
-    linkedin_data = scrape_linkedin_profile(
-    linkedin_profile_url
+    #
+    linkedin_data = scrape_demo_linkedin_profile(
+        linkedin_profile_url
     )
 
     print(chain.run(information=linkedin_data))

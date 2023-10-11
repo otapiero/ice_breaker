@@ -17,7 +17,6 @@ def scrape_linkedin_profile(linkedin_profile_url: str):
     response = requests.get(
         api_endpoint, params={"url": linkedin_profile_url}, headers=headers
     )
-    print(response._content)
     data = response.json()
     data = {
         k: v

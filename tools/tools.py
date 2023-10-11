@@ -38,7 +38,7 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):
 
 
 def get_profile_url(text: str) -> str:
-    """Searches for Linkedin Profile Page."""
+    """Searches for Linkedin Profile """
     serp_api = CustomSerpAPIWrapper()
     results = serp_api.run(f"{text}")
     return results
@@ -46,7 +46,34 @@ def get_profile_url(text: str) -> str:
 
 def check_profile_url(url: str) -> bool:
     """Checks if URL is a valid Linkedin Profile Page."""
-    print(f"Checking if {url} is a valid Linkedin Profile Page")
+    # check if url is in this format: https://www.linkedin.com/in/eden-marco/
     if "linkedin.com/in/" in url:
         return True
-    return False
+    else:
+        return False
+
+
+def extract_unique_identifier ( url: str ) -> str:
+    """Extracts a unique identifier from a LinkedIn Profile URL."""
+
+    # Check if the URL is a LinkedIn profile URL
+    if "linkedin.com/in/" in url:
+        # Split the URL based on "linkedin.com/in/"
+        parts = url.split("linkedin.com/in/")
+
+        # Ensure we have the correct part and handle any query parameters
+        unique_name = parts[1].split("?")[0]
+
+        # Remove any trailing slashes
+        unique_name = unique_name.rstrip("/")
+
+        return unique_name
+    else:
+        raise ValueError("The provided URL is not a valid LinkedIn profile URL")
+
+
+def reformat_linkedin_url(url: str) -> str:
+    """Reformats a LinkedIn Profile URL to a standard format."""
+    unique_name = extract_unique_identifier(url)
+
+    return f"https://www.linkedin.com/in/{unique_name}/"
