@@ -43,7 +43,6 @@ def lookup(name: str) -> str:
     )
     prompt = PromptTemplate(input_variables=["name_of_person"], template=template)
 
-    linkedin_url = agent.run(prompt.format_prompt(name_of_person=name)
-    )
+    linkedin_url = agent.run(prompt.format_prompt(name_of_person=name))
 
     return linkedin_url

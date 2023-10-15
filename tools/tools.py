@@ -38,7 +38,7 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):
 
 
 def get_profile_url(text: str) -> str:
-    """Searches for Linkedin Profile """
+    """Searches for Linkedin Profile"""
     serp_api = CustomSerpAPIWrapper()
     results = serp_api.run(f"{text}")
     return results
@@ -53,7 +53,7 @@ def check_profile_url(url: str) -> bool:
         return False
 
 
-def extract_unique_identifier ( url: str ) -> str:
+def extract_unique_identifier(url: str) -> str:
     """Extracts a unique identifier from a LinkedIn Profile URL."""
 
     # Check if the URL is a LinkedIn profile URL
