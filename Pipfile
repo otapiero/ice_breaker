@@ -5,13 +5,13 @@ name = "pypi"
 
 [packages]
 langchain = "*"
-black = "*"
+tweepy = "*"
 python-dotenv = "*"
+flask = "*"
 openai = "*"
-google-search-reqsults = "*"
+google-search-results = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
-python_full_version = "3.9.13"
+python_version = "3.10"

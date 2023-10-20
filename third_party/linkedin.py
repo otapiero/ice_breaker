@@ -49,5 +49,5 @@ def scrape_demo_linkedin_profile(linkedin_profile_url: str):
     if data.get("groups"):
         for group_dict in data.get("groups"):
             group_dict.pop("profile_pic_url")
-
+    data["profile_pic_url"] = "https://s3.us-west-000.backblazeb2.com/proxycurl/person/eden-marco/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20231017%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20231017T161716Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9b9ab76e8fb37df53fe34dc8207c2cc35b248386a8562ec2c6557270cb96a837"
     return data
